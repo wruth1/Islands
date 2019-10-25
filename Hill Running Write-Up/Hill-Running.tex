@@ -1,0 +1,68 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+
+\newtheorem{perm_expec}{Proposition}
+
+% Norm
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+% Citation needed
+\usepackage{ifthen}
+\let\oldcite=\cite
+\renewcommand\cite[1]{\ifthenelse{\equal{#1}{NEEDED}}{[citation~needed]}{\oldcite{#1}}}
+
+\title{The Effect of Running on Heart Rate:\\
+\large An unrandomized study}
+\author{William Ruth}
+\date{Oct 2019}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+
+Running uphill feels harder than running downhill \cite{NEEDED}. It would be nice to quantify this feeling so we can investigate whether it is imaginary or actually reflected in bodily processes. One tool for measuring the body's reaction to exercise is by change in heart rate. We carry out a study to compare how peoples' heart rates change after running up or down hill.
+
+\section*{Method}
+
+20 subjects were selected not-at-random from the city of Helvig, North Island. Our ideal collection process consists of a two-stage process. We start by selecting a house, then we select the oldest individual in that house. We then select the next highest numbered house.
+
+A few things can go wrong with our process. Sometimes, I forget which house I was on, so I increment the number by a few to make sure the next person is sampled from a new house. It is also possible for a selected individual to decline to participate in our study. In this case, we move on the the next oldest person in their household. If we run out of people in that house, we move onto the next house and re-start the process.
+
+Once we have selected our 20 people, we divide them into two equally sized groups. The first 10 people are assigned to the uphill group and the second 10 people are assigned to the downhill group. All individuals have their heart-rate measured, then run for 200m, either up or down hill corresponding to their group. Finally, individuals' heart rates are measured after running and the difference is computed. We also record individuals' age and gender, although this information is not included in the analysis.
+
+\newpage
+
+\section*{Analysis}
+
+A simple two-sample T-test is used to compare the change in heart-rate between the two groups. Our null hypothesis is that the means of the two groups are equal, and the alternative is that they are different (i.e. a two-sided alternative). Results of the analysis are given in Table \ref{T-Test_Results}. 
+
+\begin{table}[t]
+\caption{T-Test Results}
+\label{T-Test_Results}
+\centering
+\begin{tabular}{ |c|c|c|c| } 
+ \hline
+ Difference in HR Increase & T-Statistic & DF & p-value\\
+ \hline
+ 6.1 & 7.42 & 16.1 & $1.41 \cdot 10^{-6}$ \\ 
+ \hline
+\end{tabular}
+\end{table}
+
+Our p-value is less than $\alpha = 0.05$, so we reject the null hypothesis and conclude that the average difference in heart rate is greater among people that ran uphill than downhill.
+
+\section*{Conclusion}
+
+The findings of this study are promising, but there are still many unanswered questions. The next step for us is to analyse the other variables that we measured. Specifically, it would be interesting to know if the effect of exercise is modulated by the age and gender of the individual. 
+
+Given more resources, we would also like extend this study to other cities and other islands. It would probably be a good idea to include randomization too.
+
+\end{document}
