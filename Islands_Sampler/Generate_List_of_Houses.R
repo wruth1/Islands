@@ -20,10 +20,11 @@ get.sample.all = function(n){
   num.buildings = sum(data$Buildings)
   my.indices = sample(1:num.buildings, n)
   my.sample = buildings[my.indices,]
-  my.sample.ordered = my.sample[order(my.sample$Island,
-                                      my.sample$City,
-                                      my.sample$House),]
-  return(my.sample.ordered)
+  return(my.sample)
+  # my.sample.ordered = my.sample[order(my.sample$Island,
+  #                                     my.sample$City,
+  #                                     my.sample$House),]
+  # return(my.sample.ordered)
 }
 
 get.sample.island = function(n, island){
@@ -32,10 +33,11 @@ get.sample.island = function(n, island){
   num.buildings = sum(my.data$Buildings)
   my.indices = sample(1:num.buildings, n)
   my.sample = my.buildings[my.indices,]
-  my.sample.ordered = my.sample[order(my.sample$Island,
-                                      my.sample$City,
-                                      my.sample$House),]
-  return(my.sample.ordered)
+  return(my.sample)
+  # my.sample.ordered = my.sample[order(my.sample$Island,
+  #                                     my.sample$City,
+  #                                     my.sample$House),]
+  # return(my.sample.ordered)
 }
 
 get.sample = function(n, type){
